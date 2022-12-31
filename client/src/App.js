@@ -1,4 +1,6 @@
+import React, { useState, useEffect } from "react";
 import "./App.scss";
+import axios from "axios";
 import addIcon from "./assets/icons/add.svg";
 
 function App() {
@@ -6,7 +8,11 @@ function App() {
     <div className="App">
       <h1 className="todo__title">to-do list</h1>
       <div className="todo">
-        <input type="text" name="todoEntry" placeholder="Add a todo" />
+        <input
+          type="text"
+          name="todoEntry"
+          placeholder="Add a todo"
+        />
         <button class="todo__btn">
           <img src={addIcon} />
         </button>
