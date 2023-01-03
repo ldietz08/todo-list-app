@@ -12,8 +12,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const db = mysql.createPool({
   host: "localhost",
-  user: "root",
-  password: "rootroot",
+  user: process.env.user,
+  password: process.env.password,
   database: "todo_list",
 });
 
