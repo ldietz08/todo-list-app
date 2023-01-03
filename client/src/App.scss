@@ -13,23 +13,30 @@
   background-size: cover;
   background-position: 50% 60%;
 }
-
-.App input {
-  width: 12rem;
-  height: 2rem;
-  border-radius: 4px;
-  border: 2px solid rgb(63, 23, 33);
+.form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
 }
-
 .todo {
   display: flex;
   align-items: center;
+  &__input {
+    width: 13rem;
+    height: 2.5rem;
+    border-radius: 4px;
+    border: 2px solid $maroon;
+    font-weight: 300;
+    font-family: "Montserrat";
+  }
   &__title {
-    color: rgb(226, 143, 143);
+    color: $chilean-fire;
+    letter-spacing: 0.1rem;
     text-transform: uppercase;
-    text-shadow: 2.5px 2.5px 2.5px rgb(63, 23, 33);
-    font-size: 3rem;
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    text-shadow: 2px 2px 2px $maroon;
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-family: "Montserrat";
   }
   &__btn {
     height: 1.8rem;
@@ -37,26 +44,31 @@
     margin-left: 0.5rem;
     border: none;
     border-radius: 4px;
-    background-color: rgb(63, 23, 33);
+    background-color: $orange;
   }
   &__container {
-    background-color: rgb(248, 230, 230);
+    background-color: $off-white;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
     border-radius: 0.25rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-weight: 300;
+    font-family: "Montserrat";
     margin: 1rem;
     padding: 0 2rem;
     gap: 1rem;
-    width: 25%;
   }
   &__container button {
-        border: none;
+    background-color: $off-white;
+    border: none;
   }
 }
-
+input[type="checkbox"] {
+  transform: scale(1.5);
+  accent-color: $orange;
+}
 .trash-icon {
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1.3rem;
+  width: 1.3rem;
 }

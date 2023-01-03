@@ -17,10 +17,6 @@ const db = mysql.createPool({
   database: "todo_list",
 });
 
-app.get("/", (req, res) => {
-  res.send("HELLO!");
-});
-
 app.get("/todos", (req, res) => {
   const q = "SELECT * FROM todos";
   db.query(q, (err, result) => {
@@ -39,17 +35,15 @@ app.post("/todos", (req, res) => {
   });
 });
 
-app,
-  delete ("/:id",
-  (req, res) => {
-    const todoId = req.params.id;
-    const q = "DELETE FROM todos WHERE id = ?";
+app.delete("/todos/:id", (req, res) => {
+  const todoId = req.params.id;
+  const q = "DELETE FROM todos WHERE id = ?";
 
-    db.query(q, todoId, (err, result) => {
-      if (err) return res.json(err);
-      return res.json("Todo was successfully deleted");
-    });
+  db.query(q, todoId, (err, result) => {
+    if (err) return res.json(err);
+    return res.json("Todo was successfully deleted");
   });
+});
 
 app.listen(PORT, () => {
   console.log(`The server is running on ${PORT}! You better go catch it`);

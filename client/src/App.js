@@ -3,6 +3,7 @@ import "./App.scss";
 import axios from "axios";
 import AddIcon from "./assets/icons/add.svg";
 import Trash from "./assets/icons/trash.svg";
+import Update from "./assets/icons/trash.svg";
 
 function App() {
   const [newTodo, setNewTodo] = useState("");
@@ -52,6 +53,7 @@ function App() {
             <input
               type="text"
               name="todoEntry"
+              className="todo__input"
               placeholder="Add a todo"
               onChange={(e) => setNewTodo(e.target.value)}
             />
@@ -63,6 +65,7 @@ function App() {
         {todos?.map((todo) => {
           return (
             <div className="todo__container" key={todo.id}>
+              <input type="checkbox" className="todo__checkbox" />
               <div>
                 <p>{todo.newTodo}</p>
               </div>
